@@ -1,0 +1,10 @@
+.team-box {
+    display: flex;
+    width: 40%;
+    justify-content: center;
+}
+  
+.team-item {
+    display: block;
+    text-align: center;
+}
