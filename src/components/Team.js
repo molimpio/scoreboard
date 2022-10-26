@@ -21,12 +21,12 @@ function Team(props) {
     return (
         <div className="team-box">
             <div className="team-item">
-                <h2>{props.name}</h2>
-                <h2>{goal}</h2>
+                <h2 className="team-title">{props.name}</h2>
+                <h2 className="team-goal">{goal}</h2>
                 {props.gameFinish ? '' :
-                    <button onClick={() => setGoal(goal + 1)}>Goal</button>
+                    <button className="button" onClick={() => setGoal(goal + 1)}>Goal</button>
                 }
-                <h3>{statusTeam}</h3>
+                <h3 className="team-goal">{statusTeam}</h3>
             </div>
         </div>
     );
