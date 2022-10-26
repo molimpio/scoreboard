@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import '../App.css';
 
 function Team(props) {
+
+    const [goal, setGoal] = useState(0);
+    const [statusTeam, setStatusTeam] = useState('');
+
+    useEffect(() => {
+        if (goal === 3) {
+            function setWinner() {
+                setStatusTeam('Winner!');
+                props.setGameFinish(true);
+            }
+            setWinner();
+        }
+    });
+
     return (
         <div className="team-box">
             <div className="team-item">
                 <h2>{props.name}</h2>
-                <h2>{props.goals}</h2>
+                <h2>{goal}</h2>
                 {props.gameFinish ? '' :
-                <button onClick={() => props.setGoalTeam(props.goalTeam + 1)}>Goal</button>
+                    <button onClick={() => setGoal(goal + 1)}>Goal</button>
                 }
-                <h3>{props.statusTeam}</h3>
+                <h3>{statusTeam}</h3>
             </div>
         </div>
     );
