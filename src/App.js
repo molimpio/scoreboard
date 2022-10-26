@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Team from './components/Team';
 import './App.css';
 
 function App() {
@@ -34,33 +35,26 @@ function App() {
         <h1>Score Board</h1>
       </div>
       
-      <div className="row">
-        <div className="team-box">
-          <div className="team-item">
-            <h2>Home Team</h2>
-            <h2>{goalHomeTeam}</h2>
-            {gameFinish ? '' :
-              <button onClick={() => setGoalHomeTeam(goalHomeTeam + 1)}>Goal</button>
-            }
-            <h3>{statusHomeTeam}</h3>
-          </div>
-        </div>
+      <div className="row">        
+        <Team 
+          name="Home Team" 
+          goals={goalHomeTeam}
+          gameFinish={gameFinish}
+          goalTeam={goalHomeTeam}
+          statusTeam={statusHomeTeam}
+          setGoalTeam={setGoalHomeTeam} />                      
 
         <div className="team-box-versus">X</div>
 
-        <div className="team-box">
-          <div className="team-item">
-            <h2>Visiting Team</h2>
-            <h2>{goalVisitingTeam}</h2>            
-            {gameFinish ? '' :
-              <button onClick={() => setGoalVisitingTeam(goalVisitingTeam + 1)}>Goal</button>
-            }
-            <h3>{statusVisitingTeam}</h3>
-          </div>
-        </div>
+        <Team 
+          name="Visiting Team"
+          goals={goalVisitingTeam}
+          gameFinish={gameFinish}
+          goalTeam={goalVisitingTeam}
+          statusTeam={statusVisitingTeam}
+          setGoalTeam={setGoalVisitingTeam} />
       </div>
-      
-      
+            
     </div>
   );
 }
