@@ -1,0 +1,23 @@
+.row {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.team-box {
+  display: flex;
+  width: 40%;
+  justify-content: center;
+}
+
+.team-box-versus {
+  display: flex;
+  width: 10%;
+  justify-content: center;
+  font-size: 50px;
+}
+
+.team-item {
+  display: block;
+  text-align: center;
+}
