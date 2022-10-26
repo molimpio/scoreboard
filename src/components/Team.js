@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import './Team.css';
 
+const NUMBER_GOLS_WINNER_TEAM = 3;
+
 function Team(props) {
 
     const [goal, setGoal] = useState(0);
     const [statusTeam, setStatusTeam] = useState('');
 
     useEffect(() => {
-        if (goal === 3) {
+        if (goal === NUMBER_GOLS_WINNER_TEAM) {
             function setWinner() {
                 setStatusTeam('Winner!');
                 props.setGameFinish(true);
